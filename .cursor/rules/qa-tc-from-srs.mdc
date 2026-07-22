@@ -1,0 +1,37 @@
+---
+description: Viết Test Case theo template TC (Create/List) từ SRS
+alwaysApply: true
+---
+
+# QA — Viết TC từ SRS theo Template
+
+Khi user yêu cầu viết Test Case từ SRS (hoặc tài liệu tương đương):
+
+## Nguồn bắt buộc
+1. **Template TC**: `docs/qa/tc-template.*` (ưu tiên file user đính kèm / chỉ định).
+2. **SRS**: file tài liệu chức năng theo từng màn hình.
+
+Template đã có sẵn **bộ TC bắt buộc cho từng trường** của:
+- Màn **Tạo mới / Thêm mới** (Create)
+- Màn **Danh sách** (List)
+
+Nếu template có thêm loại (Edit/Detail/…): áp dụng cùng nguyên tắc.
+
+## Quy trình
+1. Liệt kê mọi màn hình trong SRS → phân loại Create / List / khác.
+2. Với mỗi màn hình: lấy đúng bộ case trong template theo loại.
+3. Với **mỗi trường** trên màn hình: viết đủ TC bắt buộc mà template đã define cho kiểu field đó (required, maxlength, format, search/filter…).
+4. Map tên field, rule, message, quyền, button **đúng như SRS**.
+5. Chỉ thêm case ngoài template khi SRS có rule riêng → đánh dấu `[CUSTOM]`.
+6. SRS thiếu data cho 1 case bắt buộc → giữ case, ghi `[BLOCKED - thiếu SRS: …]`.
+
+## Format output
+- Giữ **đúng cột / cấu trúc** của template (không tự thêm/bớt cột).
+- 1 TC = 1 mục tiêu; Steps đánh số; Expected đo được.
+- Xuất theo từng màn hình; cuối màn có checklist coverage template + gap SRS.
+- Bắt đầu bằng bảng mapping: `Màn hình | Loại | Bộ case template`.
+
+## Cấm
+- Bỏ sót case bắt buộc trong template cho bất kỳ field nào.
+- Đổi tên field/button khác SRS.
+- Viết case trùng ý (gộp + note nếu cần).
