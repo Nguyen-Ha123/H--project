@@ -71,9 +71,10 @@ Chi tiết: [srs-ui-extraction.md](references/srs-ui-extraction.md).
 
 ### Phase 3 — Phân tích UI
 
-- Screenshot: labels, placeholders, `(*)`, dropdown, buttons, table columns.
+- UI assets = **N/A** → bỏ screenshot inventory; chỉ dùng live staging nếu cần confirm.
 - Live UI (Browser): navigate → snapshot → mở form Tạo mới → mở dropdown lấy options → trigger 1 validation so SRS.
 - Xuất **Field Inventory** (bắt buộc trước gen CSV lớn).
+- Không có UI → dựa SRS + Template; đánh assumption / TBD khi thiếu confirm.
 
 ### Phase 4 — Ghép 3 nguồn
 
@@ -104,7 +105,7 @@ Thứ tự sections theo Template:
 
 ### Phase 7 — Review tự động
 
-Chạy checklist dưới đây + validation map. Nếu có gap → `output/reports/{UC}_tc_review_{date}.md`.
+Chạy checklist dưới đây + validation map. Nếu có gap → `C:\Users\hant2\Desktop\HATC\Output\reports\{UC}_tc_review_{date}.md`.
 
 ### Phase 8 — Giao user
 

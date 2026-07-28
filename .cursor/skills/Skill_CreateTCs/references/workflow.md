@@ -115,7 +115,7 @@ Thứ tự sections (theo Template):
 
 Chạy checklist SKILL.md + template-validation-map.md.
 
-Xuất `output/reports/{UC}_tc_review_{date}.md` nếu có gap.
+Xuất `C:\Users\hant2\Desktop\HATC\Output\reports\{UC}_tc_review_{date}.md` nếu có gap.
 
 ## Phase 8 — Giao user
 
