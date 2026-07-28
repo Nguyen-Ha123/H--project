@@ -4,9 +4,9 @@ QA toolkit: sinh Test Case CSV từ **SRS + UI** theo Template TC (MBFS).
 
 ## Skill
 
-`.cursor/skills/gen-tc-from-srs-ui/`
+`.cursor/skills/Skill_CreateTCs/`
 
-Invoke: `/gen-tc-from-srs-ui` hoặc hỏi agent gen TC / viết testcase từ SRS.
+Invoke: `/Skill_CreateTCs` hoặc hỏi agent gen TC / viết testcase từ SRS.
 
 ## Layout
 
@@ -23,4 +23,4 @@ Invoke: `/gen-tc-from-srs-ui` hoặc hỏi agent gen TC / viết testcase từ S
 
 1. Đặt template vào `Templates/MBFS_Testcase_Template.csv`
 2. Thêm SRS vào `docs/SRS/`, screenshot vào `docs/UI/`
-3. Trong Cursor Agent: `/gen-tc-from-srs-ui` với `UC-ID` (vd: UC-01)
+3. Trong Cursor Agent: `/Skill_CreateTCs` với `UC-ID` (vd: UC-01)

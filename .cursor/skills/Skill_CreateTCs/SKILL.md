@@ -1,12 +1,12 @@
 ---
-name: gen-tc-from-srs-ui
+name: Skill_CreateTCs
 description: >-
   Sinh Test Case CSV từ SRS + UI theo Template TC (MBFS). Dùng khi user yêu cầu
   gen TC, viết testcase từ SRS, phân tích UI/screenshot, field inventory, hoặc
   xuất CSV theo template MBFS (Tìm kiếm / Tạo mới).
 ---
 
-# Gen TC from SRS + UI
+# Skill_CreateTCs
 
 Sinh file Test Case CSV từ **3 nguồn bắt buộc**: Template TC + SRS + UI.
 Không bỏ pattern bắt buộc trong Template trừ khi SRS/scope loại trừ rõ.

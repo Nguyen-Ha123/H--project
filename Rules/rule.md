@@ -2,7 +2,7 @@
 
 Khi gen Test Case từ SRS + UI:
 
-1. Tuân thủ skill `gen-tc-from-srs-ui` (`.cursor/skills/gen-tc-from-srs-ui/`).
+1. Tuân thủ skill `Skill_CreateTCs` (`.cursor/skills/Skill_CreateTCs/`).
 2. Template TC là nguồn pattern bắt buộc — không bỏ case trừ khi scope loại trừ.
 3. Message Expected copy nguyên văn SRS; conflict SRS/UI → ưu tiên UI text khi verify.
 4. Field SRS không thấy trên UI → BLOCKED, hỏi user.
