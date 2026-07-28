@@ -93,7 +93,7 @@ Map control type → pattern A–J theo validation map.
 
 Tổng > 30 → chờ user OK.
 
-### Phase 6 — Sinh CSV
+### Phase 6 — Sinh CSV / XLSX
 
 Thứ tự sections theo Template:
 
@@ -101,7 +101,9 @@ Thứ tự sections theo Template:
 2. **Tạo mới**: Default form UI → Popup actions → per required (G) → per optional (H/J) → Happy path → Security nếu template có
 
 - Đánh số `TC_001` liên tục; `ID_UC` = UC user cung cấp.
-- Output: `C:\Users\hant2\Desktop\HATC\Output\{UC}_testcase_v{version}.csv`
+- **Output path:**
+  - Local Windows: `C:\Users\hant2\Desktop\HATC\Output\...` (ghi thẳng)
+  - Cloud: thử path trên; nếu không tồn tại → `output/` + `/opt/cursor/artifacts/` và **nói rõ** chưa ghi được ổ C:
 
 ### Phase 7 — Review tự động
 

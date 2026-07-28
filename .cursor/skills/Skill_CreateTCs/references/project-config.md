@@ -41,8 +41,17 @@ ID_UC, ID_TC, Tiêu đề, Tiền điều kiện, Các bước thực hiện, K�
 
 - Template: đọc file CSV trong folder `C:\Users\hant2\Desktop\HATC\Template`.
 - SRS: lấy file từ `C:\Users\hant2\Desktop\HATC\Input`.
-- Output CSV: ghi vào `C:\Users\hant2\Desktop\HATC\Output` (vd: `{UC}_testcase_v{version}.csv`).
+- Output CSV/XLSX: ghi vào `C:\Users\hant2\Desktop\HATC\Output` (vd: `{UC}_testcase_v{version}.csv`).
 - UI assets = N/A → bỏ Phase 3A screenshot; chỉ dùng live staging / SRS khi cần confirm UI.
 - Cập nhật bảng SRS files khi thêm UC mới.
 - Version CSV: tăng `v{n}` mỗi lần gen lại cùng UC (v1, v2, …).
 - Nếu user chỉ định path khác → ưu tiên path user.
+
+## Output path — Local vs Cloud (BẮT BUỘC)
+
+| Môi trường | Ghi Output đi đâu |
+|------------|-------------------|
+| **Cursor Local** (agent trên máy Windows user) | **Bắt buộc** ghi thẳng `C:\Users\hant2\Desktop\HATC\Output` |
+| **Cursor Cloud** (máy ảo Linux) | **Không có ổ C:** → ghi `output/` trong repo + `/opt/cursor/artifacts/` để user tải. Báo rõ không ghi được Desktop. |
+
+Không giả vờ đã ghi ổ C: khi chạy Cloud. Muốn auto-add vào Desktop → user phải chạy skill bằng **Local agent**.
