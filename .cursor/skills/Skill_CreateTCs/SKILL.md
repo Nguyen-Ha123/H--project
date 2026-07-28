@@ -35,8 +35,8 @@ User cung cấp (hoặc lấy từ config):
 | Param | Mô tả | Default |
 |-------|--------|---------|
 | `UC-ID` | vd: UC-01 | bắt buộc |
-| `--srs` | path SRS | `docs/SRS/` theo config |
-| `--ui` | URL staging hoặc screenshot | `docs/UI/` theo config |
+| `--srs` | path SRS | `C:\Users\hant2\Desktop\HATC\Input` theo config |
+| `--ui` | URL staging (UI assets = N/A) | staging URL theo config |
 | `--scope` | `search` \| `create` \| `all` | `all` |
 | `analyze` | chỉ inventory, chưa gen CSV | optional |
 
@@ -60,7 +60,7 @@ Lấy UC-ID, paths, scope từ user/config. Xem [project-config.md](references/p
 
 ### Phase 1 — Template TC (BẮT BUỘC TRƯỚC)
 
-1. Mở Template từ config (`Templates/MBFS_Testcase_Template.csv`).
+1. Mở Template từ config (`C:\Users\hant2\Desktop\HATC\Template`).
 2. Ghi nhận metadata, section headers (**Tìm kiếm**, **Tạo mới**, …), pattern validate mẫu, style multi-step + SQL trong Expected.
 3. Xuất nội bộ: **Template Pattern Checklist**.
 
@@ -100,7 +100,7 @@ Thứ tự sections theo Template:
 2. **Tạo mới**: Default form UI → Popup actions → per required (G) → per optional (H/J) → Happy path → Security nếu template có
 
 - Đánh số `TC_001` liên tục; `ID_UC` = UC user cung cấp.
-- Output: `output/{UC}_testcase_v{version}.csv`
+- Output: `C:\Users\hant2\Desktop\HATC\Output\{UC}_testcase_v{version}.csv`
 
 ### Phase 7 — Review tự động
 
@@ -140,9 +140,9 @@ Chạy checklist dưới đây + validation map. Nếu có gap → `output/repor
 
 | Artifact | Path |
 |----------|------|
-| CSV TC | `output/{UC}_testcase_v{version}.csv` |
-| Field Map / Inventory | markdown trong chat hoặc `output/reports/` |
-| Review gap | `output/reports/{UC}_tc_review_{date}.md` |
+| CSV TC | `C:\Users\hant2\Desktop\HATC\Output\{UC}_testcase_v{version}.csv` |
+| Field Map / Inventory | markdown trong chat hoặc `C:\Users\hant2\Desktop\HATC\Output\reports\` |
+| Review gap | `C:\Users\hant2\Desktop\HATC\Output\reports\{UC}_tc_review_{date}.md` |
 
 ## Cấm
 
