@@ -1,12 +1,12 @@
 ---
-name: Skill_CreateTCs
+name: skill-createtcs
 description: >-
-  Sinh Test Case CSV từ SRS + UI theo Template TC (MBFS). Dùng khi user yêu cầu
-  gen TC, viết testcase từ SRS, phân tích UI/screenshot, field inventory, hoặc
-  xuất CSV theo template MBFS (Tìm kiếm / Tạo mới).
+  Skill_CreateTCs — Sinh Test Case CSV/XLSX từ SRS + UI theo Template TC (MBFS).
+  Dùng khi user yêu cầu gen TC, viết testcase từ SRS, thêm TC sửa/xóa, process bar,
+  field inventory, hoặc xuất CSV vào HATC Output.
 ---
 
-# Skill_CreateTCs
+# Skill_CreateTCs (`/skill-createtcs`)
 
 Sinh file Test Case CSV từ **3 nguồn bắt buộc**: Template TC + SRS + UI.
 Không bỏ pattern bắt buộc trong Template trừ khi SRS/scope loại trừ rõ.
