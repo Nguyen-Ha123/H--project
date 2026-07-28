@@ -407,8 +407,8 @@ def build(path: Path):
         [""],
         ["Cách merge:"],
         ["1. Mở file gốc Excel (giữ nguyên mọi TC + cột Kết quả test cũ)."],
-        ["2. Copy toàn bộ dòng Flag=NEW từ sheet TC_MOI."],
-        ["3. Paste vào sheet đầu (Danh sách / Sửa-Xóa) và sheet Chi tiết tương ứng."],
+        ["2. Mở sheet ĐẦU TIÊN tên đúng: \"TC mới\" (bôi vàng)."],
+        ["3. Copy dòng Flag=NEW → paste thêm vào sheet gốc tương ứng (không ghi đè Kết quả test cũ)."],
         ["4. KHÔNG ghi đè / xóa TC cũ; KHÔNG sửa cột Kết quả test đã có."],
         ["5. Đổi ID_TC cho khớp sequence file gốc nếu team đánh số liên tục."],
         ["6. Giữ tô vàng các dòng mới để review."],
@@ -471,7 +471,8 @@ def build(path: Path):
         ws2.column_dimensions[get_column_letter(col)].width = 40
 
     # --- Main TC sheet ---
-    ws = wb.create_sheet("TC_MOI", 1)
+    # Sheet name must be exactly "TC mới" (first sheet — dễ thấy)
+    ws = wb.create_sheet("TC mới", 0)
     ws.append(COLS)
     for cell in ws[1]:
         style_cell(cell, HEADER_FILL, HEADER_FONT)
@@ -490,6 +491,7 @@ def build(path: Path):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = f"A1:{get_column_letter(len(COLS))}{ws.max_row}"
+    wb.active = ws
 
     # legend
     ws3 = wb.create_sheet("Legend")
@@ -510,7 +512,10 @@ def build(path: Path):
 
 if __name__ == "__main__":
     targets = [
+        Path("/workspace/output/Quan_ly_cho_vay_ fix comment.xlsx"),
+        Path("/workspace/output/Quan_ly_cho_vay_fix_comment.xlsx"),
         Path("/workspace/output/Quan_ly_cho_vay_fix_comment_TC_MOI.xlsx"),
+        Path("/opt/cursor/artifacts/HATC_Output/Quan_ly_cho_vay_ fix comment.xlsx"),
         Path("/opt/cursor/artifacts/HATC_Output/Quan_ly_cho_vay_fix_comment_TC_MOI.xlsx"),
     ]
     for t in targets:
