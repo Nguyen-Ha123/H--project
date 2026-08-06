@@ -2,26 +2,28 @@
 
 QA toolkit: sinh Test Case CSV từ **SRS + UI** theo Template TC (MBFS).
 
-## Skill
+## Skills
 
-Path: `.cursor/skills/skill-createtcs/`  
-Invoke trong Agent: **`/skill-createtcs`**
+| Invoke | Path | Việc |
+|--------|------|------|
+| `/skill-createtcs` | `.cursor/skills/skill-createtcs/` | Gen TC từ SRS + UI |
+| `/review-tc-from-srs` | `.cursor/skills/review-tc-from-srs/` | Review TC đối chiếu SRS (QTQ 4.1.11) |
 
-> Cursor chỉ nhận skill tên **chữ thường + gạch ngang**. Tên hiển thị vẫn là Skill_CreateTCs.
+### Local — để skill hiện
 
-### Để skill hiện trên Cursor Local
+1. Mở repo **H--project** trong Cursor Desktop  
+2. `git fetch && git checkout cursor/gen-tc-srs-ui-skill-d6be`  
+3. Mở lại Agent → gõ `/skill-createtcs` hoặc `/review-tc-from-srs`
 
-1. Mở đúng repo **`H--project`** trong Cursor Desktop (không chỉ mở folder HATC).
-2. Checkout branch có skill:
-   ```bash
-   git fetch origin
-   git checkout cursor/gen-tc-srs-ui-skill-d6be
-   ```
-   (Hoặc merge PR #2 vào `main` rồi `git pull`.)
-3. Restart Cursor / mở lại Agent chat.
-4. Gõ `/skill-createtcs` — phải thấy gợi ý skill.
+### Review TC (QTQ) — Local only cho ổ D:
 
-Nếu làm việc trong folder `Desktop\HATC`: copy cả thư mục `.cursor/skills/skill-createtcs` vào folder đó.
+```
+/review-tc-from-srs
+SRS: D:\QTQ\SRS\SRS_Quỹ_Nhóm CN khai thác thông tin hoạt động quỹ_Ver1.1_final(1) mục 4.1.11
+TC:  D:\QTQ\testcases\Cổng\MBFS_UC_4.1.9-4.1.11_ThuVien_Testcase_v0.1
+```
+
+Cloud không đọc `D:\` — cần Local hoặc attach file.
 
 ## Layout (HATC paths)
 
@@ -33,7 +35,7 @@ Nếu làm việc trong folder `Desktop\HATC`: copy cả thư mục `.cursor/ski
 | UI assets | N/A |
 | `C:\Users\hant2\Desktop\HATC\Output` | CSV/XLSX TC đã gen |
 
-## Quick start (Local → ghi ổ C:)
+## Quick start
 
-1. Cursor Desktop + repo `H--project` + branch có skill
-2. Agent: `/skill-createtcs` gen/add TC vào `C:\Users\hant2\Desktop\HATC\Output`
+**Gen TC (Local → HATC Output):** `/skill-createtcs`  
+**Review TC (Local → QTQ D:):** `/review-tc-from-srs`
