@@ -1,0 +1,125 @@
+﻿ID_UC,ID_TC,Tiêu đề,Tiền điều kiện,Các bước thực hiện,Kết quả mong muốn,Kết quả test,Ghi chú,Flag
+Quan_ly_cho_vay,,Sửa hồ sơ (Danh sách — sheet đầu),,,,,SECTION — TC mới (bôi vàng),SECTION
+Quan_ly_cho_vay,TC_EDIT_001,Hiển thị action Sửa trên danh sách hồ sơ,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Có ≥1 hồ sơ trên lưới.,"1. Quan sát cột Thao tác / action trên từng dòng hồ sơ
+2. Hover / kiểm tra icon hoặc nút Sửa","Mỗi dòng hồ sơ hợp lệ hiển thị action Sửa (icon/bút chì hoặc menu).
+Action nhận diện được, không bị che.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_002,Mở form Sửa Hồ sơ - Uỷ thác cho vay từ danh sách,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Có ≥1 hồ sơ.,"1. Tại dòng hồ sơ bất kỳ, click Sửa
+2. Quan sát popup/form mở ra","Mở form tiêu đề: ""Sửa Hồ sơ - Uỷ thác cho vay"".
+Có nút đóng (X), Hủy, Lưu.
+Form load đủ section theo UI (Hình thức tiếp nhận, Người nộp, Thông tin tờ khai, Dự án, Đề nghị vay, Giải ngân, Thẩm định/Tài sản, Hồ sơ đính kèm).",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_003,Form Sửa prefill đúng dữ liệu hồ sơ đã lưu,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Biết sẵn giá trị các field của 1 hồ sơ (gồm phần tài sản).,"1. Click Sửa trên hồ sơ đã chọn
+2. So sánh từng field trên form với dữ liệu đã lưu / chi tiết hồ sơ","Toàn bộ field hiển thị đúng giá trị hiện tại của hồ sơ (không blank sai, không lệch sang hồ sơ khác).
+Gồm cả field tài sản: Tài sản đảm bảo, Mô tả chi tiết TSĐB, Hiện trạng tài sản, Tính pháp lý tài sản.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_004,Sửa — Hủy không lưu thay đổi,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Mở form Sửa.,"1. Đổi giá trị 1 field bất kỳ (vd: Họ tên người nộp)
+2. Click Hủy
+3. Mở lại Sửa / Chi tiết cùng hồ sơ","Form đóng, không lưu.
+Dữ liệu hồ sơ giữ nguyên giá trị cũ.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_005,Sửa — đóng icon X không lưu,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Mở form Sửa.,"1. Đổi 1 field
+2. Click icon X
+3. Kiểm tra lại dữ liệu hồ sơ","Form đóng, không lưu. Dữ liệu gốc không đổi.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_006,Sửa — bỏ trống field bắt buộc (Người nộp / Tổ chức),Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Mở form Sửa. Các field (*) đang có giá trị.,"1. Xóa trống lần lượt các field (*): Loại giấy tờ người nộp / Số định danh / Họ tên người nộp / Mã số thuế / các field (*) khác visible
+2. Click Lưu","Không lưu thành công.
+Highlight field lỗi + message kiểu ""Vui lòng nhập + tên trường"" (theo UI thực tế).
+Nút Lưu disabled hoặc form vẫn mở. [TBD message nguyên văn nếu SRS khác]",,Assumption: rule required giống form Tạo mới,NEW
+Quan_ly_cho_vay,TC_EDIT_007,Sửa phần Tài sản đảm bảo — happy path,"Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Hồ sơ cho phép sửa. Mở form Sửa → section ""5. Kết quả thẩm định hồ sơ của ngân hàng"".","1. Sửa ""Tài sản đảm bảo"" = giá trị hợp lệ mới
+2. Sửa ""Mô tả chi tiết tài sản đảm bảo""
+3. Sửa ""Hiện trạng tài sản""
+4. Sửa ""Tính pháp lý tài sản""
+5. Giữ checkbox cam kết (nếu bắt buộc)
+6. Click Lưu
+7. Mở Chi tiết / Sửa lại để verify","Lưu thành công (message theo UI, vd: ""Cập nhật thành công"" — [TBD]).
+4 field tài sản phản ánh đúng giá trị mới trên Chi tiết hồ sơ.
+Các field khác không bị ghi đè sai.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_008,Sửa phần Tài sản — bỏ trống field (*) tài sản,"Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Mở form Sửa, section thẩm định/tài sản.","1. Xóa trống lần lượt: Tài sản đảm bảo / Mô tả chi tiết TSĐB / Hiện trạng tài sản / Tính pháp lý tài sản
+2. Click Lưu sau mỗi lần (hoặc cuối cùng)","Không cho lưu khi field (*) tài sản trống.
+Hiển thị validation + highlight field.
+Message: ""Vui lòng nhập + tên trường"" (ưu tiên text UI).",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_009,Sửa — cập nhật Hình thức tiếp nhận (Trực tiếp / Trực tuyến),Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Mở form Sửa.,"1. Đổi radio Hình thức từ Trực tiếp ↔ Trực tuyến
+2. Click Lưu
+3. Mở lại form / chi tiết",Lưu thành công. Hình thức hiển thị đúng lựa chọn mới.,,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_EDIT_010,Sửa — không cho sửa / ẩn Sửa theo trạng thái hồ sơ (nếu có rule),"Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Có hồ sơ ở các trạng thái: Chờ tiếp nhận, Chờ phân công, Chờ thẩm định, Chờ ký duyệt, Đã ký duyệt.","1. Với từng trạng thái, kiểm tra action Sửa trên danh sách
+2. Nếu mở được form: thử Lưu thay đổi nhỏ","Theo business rule [TBD từ SRS]:
+- Trạng thái cho phép sửa → action Sửa available, lưu OK
+- Trạng thái không cho sửa (thường: Đã ký duyệt / đã xử lý) → ẩn/disable Sửa hoặc Lưu bị chặn + message rõ
+Ghi nhận thực tế UI vào Kết quả test.",,BLOCKED/TBD — cần confirm rule theo trạng thái từ SRS,NEW
+Quan_ly_cho_vay,,Xóa hồ sơ (Danh sách — sheet đầu),,,,,SECTION — TC mới (bôi vàng),SECTION
+Quan_ly_cho_vay,TC_DEL_001,Hiển thị action Xóa trên danh sách hồ sơ,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Có ≥1 hồ sơ.,"1. Quan sát cột Thao tác trên lưới
+2. Kiểm tra icon/nút Xóa",Action Xóa hiển thị trên dòng hồ sơ (theo quyền + trạng thái cho phép).,,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_DEL_002,Xóa hồ sơ — hủy trên dialog xác nhận,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Chọn 1 hồ sơ còn trên list.,"1. Click Xóa
+2. Quan sát dialog xác nhận
+3. Chọn Hủy / Không / Đóng","Hiện dialog xác nhận xóa (nội dung rõ mã/tên hồ sơ nếu có).
+Sau khi Hủy: dialog đóng, hồ sơ vẫn còn trên danh sách, dữ liệu không đổi.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_DEL_003,Xóa hồ sơ — xác nhận thành công,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Có hồ sơ test chuyên dụng (không ảnh hưởng data thật).,"1. Ghi nhận mã/ID hồ sơ trước khi xóa
+2. Click Xóa → Xác nhận
+3. Quan sát danh sách + (nếu có) tìm lại theo mã","Message thành công theo UI (vd: ""Xóa thành công"" — [TBD]).
+Hồ sơ biến mất khỏi danh sách.
+Search lại mã → Không có dữ liệu / không tìm thấy.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_DEL_004,Xóa hồ sơ — ràng buộc theo trạng thái,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Có hồ sơ từng trạng thái process (Chờ tiếp nhận … Đã ký duyệt).,"1. Thử Xóa với từng trạng thái
+2. Ghi nhận cho phép / chặn","Theo rule [TBD]:
+- Trạng thái cho phép xóa → xóa OK như TC_DEL_003
+- Trạng thái không cho xóa (vd Đã ký duyệt) → ẩn/disable Xóa hoặc báo lỗi, hồ sơ vẫn còn
+Ưu tiên behavior UI thực tế.",,TBD rule theo trạng thái,NEW
+Quan_ly_cho_vay,TC_DEL_005,Xóa hồ sơ — kiểm tra phần tài sản/thẩm định bị gỡ theo hồ sơ,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Hồ sơ có dữ liệu section tài sản đã lưu; trạng thái cho phép xóa.,"1. Mở Chi tiết xác nhận có dữ liệu Tài sản đảm bảo / TSĐB
+2. Quay lại danh sách → Xóa → Xác nhận
+3. Cố mở lại chi tiết / query theo ID (nếu có quyền/API/DB)","Hồ sơ và dữ liệu liên quan (gồm phần tài sản/thẩm định) không còn truy cập được trên UI.
+Không còn orphan hiển thị trên list. [TBD SQL table nếu SRS cung cấp]",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,,Chi tiết hồ sơ — Thanh process (highlight theo trạng thái),,,,,SECTION — TC mới (bôi vàng),SECTION
+Quan_ly_cho_vay,TC_PROC_001,Thanh process hiển thị đủ 5 bước trạng thái,Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái tương ứng.,"1. Mở tab CHI TIẾT HỒ SƠ
+2. Quan sát thanh process phía trên","Thanh process hiển thị đúng 5 bước theo thứ tự:
+- 1. Chờ tiếp nhận
+- 2. Chờ phân công
+- 3. Chờ thẩm định
+- 4. Chờ ký duyệt
+- 5. Đã ký duyệt
+Các bước nối nhau trên 1 thanh ngang, nhìn thấy số thứ tự.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_002,Highlight process = trạng thái hồ sơ hiện tại (mapping),Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái tương ứng. Biết trạng thái hồ sơ trên list / header.,"1. Đọc trạng thái hồ sơ (list hoặc nhãn trên chi tiết)
+2. So với bước đang được highlight trên thanh process","Bước được highlight / active trên thanh process KHỚP đúng trạng thái hiện tại của hồ sơ.
+Không highlight sai bước.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_003,Process highlight khi trạng thái = Chờ tiếp nhận,"Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái ""Chờ tiếp nhận"".","1. Mở Chi tiết hồ sơ trạng thái ""Chờ tiếp nhận""
+2. Quan sát bước số 1 trên thanh process
+3. Quan sát các bước trước/sau","Bước 1 ""Chờ tiếp nhận"" được highlight (active / màu nhấn — theo UI, vd chữ xanh đậm hoặc vòng active).
+Các bước < 1: thể hiện đã qua (completed style).
+Các bước > 1: chưa tới (inactive/xám) — trừ khi UI khác (ghi nhận thực tế).
+Trạng thái hồ sơ = ""Chờ tiếp nhận"".",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_004,Process highlight khi trạng thái = Chờ phân công,"Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái ""Chờ phân công"".","1. Mở Chi tiết hồ sơ trạng thái ""Chờ phân công""
+2. Quan sát bước số 2 trên thanh process
+3. Quan sát các bước trước/sau","Bước 2 ""Chờ phân công"" được highlight (active / màu nhấn — theo UI, vd chữ xanh đậm hoặc vòng active).
+Các bước < 2: thể hiện đã qua (completed style).
+Các bước > 2: chưa tới (inactive/xám) — trừ khi UI khác (ghi nhận thực tế).
+Trạng thái hồ sơ = ""Chờ phân công"".",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_005,Process highlight khi trạng thái = Chờ thẩm định,"Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái ""Chờ thẩm định"".","1. Mở Chi tiết hồ sơ trạng thái ""Chờ thẩm định""
+2. Quan sát bước số 3 trên thanh process
+3. Quan sát các bước trước/sau","Bước 3 ""Chờ thẩm định"" được highlight (active / màu nhấn — theo UI, vd chữ xanh đậm hoặc vòng active).
+Các bước < 3: thể hiện đã qua (completed style).
+Các bước > 3: chưa tới (inactive/xám) — trừ khi UI khác (ghi nhận thực tế).
+Trạng thái hồ sơ = ""Chờ thẩm định"".",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_006,Process highlight khi trạng thái = Chờ ký duyệt,"Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái ""Chờ ký duyệt"".","1. Mở Chi tiết hồ sơ trạng thái ""Chờ ký duyệt""
+2. Quan sát bước số 4 trên thanh process
+3. Quan sát các bước trước/sau","Bước 4 ""Chờ ký duyệt"" được highlight (active / màu nhấn — theo UI, vd chữ xanh đậm hoặc vòng active).
+Các bước < 4: thể hiện đã qua (completed style).
+Các bước > 4: chưa tới (inactive/xám) — trừ khi UI khác (ghi nhận thực tế).
+Trạng thái hồ sơ = ""Chờ ký duyệt"".",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_007,Process highlight khi trạng thái = Đã ký duyệt,"Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái ""Đã ký duyệt"".","1. Mở Chi tiết hồ sơ trạng thái ""Đã ký duyệt""
+2. Quan sát bước số 5 trên thanh process
+3. Quan sát các bước trước/sau","Bước 5 ""Đã ký duyệt"" được highlight (active / màu nhấn — theo UI, vd chữ xanh đậm hoặc vòng active).
+Các bước < 5: thể hiện đã qua (completed style).
+Các bước > 5: chưa tới (inactive/xám) — trừ khi UI khác (ghi nhận thực tế).
+Trạng thái hồ sơ = ""Đã ký duyệt"".",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_008,Đồng bộ trạng thái List ↔ Process bar Chi tiết,Đăng nhập hệ thống → vào màn hình Danh sách hồ sơ Uỷ thác cho vay (sheet đầu / danh sách hồ sơ). Có ≥1 hồ sơ mỗi trạng thái (hoặc sample đa trạng thái).,"1. Từ danh sách, ghi trạng thái cột Trạng thái của hồ sơ A
+2. Click vào hồ sơ A → Chi tiết
+3. Đối chiếu bước highlight trên process bar","Trạng thái trên list = bước đang highlight trên process bar chi tiết.
+Không lệch (vd list ""Chờ thẩm định"" mà process highlight ""Đã ký duyệt"").",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_009,Thanh process chỉ đọc — không đổi trạng thái bằng click bước,Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái tương ứng.,"1. Click lần lượt các bước trên thanh process
+2. Quan sát trạng thái hồ sơ / highlight","Click bước không làm thay đổi trạng thái hồ sơ.
+Highlight vẫn theo trạng thái hiện tại.
+Không có navigation/action ngoài ý muốn (trừ khi SRS định nghĩa — [TBD]).",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_010,Process bar vẫn hiển thị khi chuyển tab chi tiết,Đăng nhập → Danh sách hồ sơ Uỷ thác cho vay → mở Chi tiết 1 hồ sơ đang ở trạng thái tương ứng.,"1. Ở CHI TIẾT HỒ SƠ — xác nhận process bar
+2. Chuyển tab THÔNG TIN THẨM ĐỊNH HỒ SƠ
+3. Chuyển tab QUÁ TRÌNH XỬ LÝ
+4. Quay lại CHI TIẾT HỒ SƠ","Thanh process vẫn đúng trạng thái (không reset / không mất highlight).
+Behavior theo UI: process bar sticky trên các tab hoặc luôn đúng khi quay lại chi tiết — ghi nhận thực tế.",,"NEW — merge vào file gốc, không đụng TC cũ",NEW
+Quan_ly_cho_vay,TC_PROC_011,Sau khi cập nhật trạng thái (workflow) — process bar highlight bước mới,Có quyền đẩy trạng thái hồ sơ (tiếp nhận / phân công / thẩm định / ký duyệt) theo luồng hệ thống. [TBD tên action thực tế],"1. Mở chi tiết hồ sơ ở trạng thái N
+2. Thực hiện action chuyển sang trạng thái N+1 (theo UI)
+3. Quan sát thanh process","Highlight chuyển sang bước tương ứng trạng thái mới.
+Bước cũ chuyển style completed.
+List cập nhật cùng trạng thái mới.",,Assumption: có action chuyển trạng thái trên UI,NEW
